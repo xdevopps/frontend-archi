@@ -1,0 +1,17 @@
+{
+  "packages": [
+    "packages/**"
+  ],
+  "version": "0.0.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "message": "chore(release): %s"
+    },
+    "publish": {
+      "message": "chore(release): %s",
+      "registry": "https://npm.pkg.github.com/"
+    }
+  }
+}

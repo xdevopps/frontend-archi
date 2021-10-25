@@ -1,0 +1,227 @@
+version: 2.1
+
+# --- Paramters definitions --------------------------------------------------- #
+parameters:
+  pkg_dir:
+    type: string
+    default: ./project
+  version:
+    type: string
+    default: 16-browsers
+  cmd_Lerna:
+    type: string
+    default: version
+
+# --- YAML Aliases ----------------------------------------------------------- #
+
+aliases: 
+  - &workspace-root ~/
+
+  - &dependency-paths
+    - << pipeline.parameters.pkg_dir >>/node_modules
+    - << pipeline.parameters.pkg_dir >>/packages/libs/*/node_modules
+
+  # List of build output paths that should be persisted to the
+  # CircleCI workspace.
+  - &build-output-paths 
+    - << pipeline.parameters.pkg_dir >>/packages/libs/*/dist
+
+  - &dependency-cache-key v1-dependency-cache-{{ checksum "yarn.lock" }}
+
+  - &save-cache
+    save_cache:
+      paths: *dependency-paths
+      key: *dependency-cache-key
+
+  - &restore_cache
+    restore_cache:
+      key: *dependency-cache-key
+
+  - &attach-workspace
+    attach_workspace:
+      at: *workspace-root
+
+  - &filter-default-branches
+    filters: 
+      branches: 
+        ignore: "/^master$|^next$/"
+
+   # Filter pull requests in "master" only (production code).
+  - &filter-release-branches-only
+    filters: 
+      branches: 
+        only: "master"
+      
+
+# --- Executor definitions --------------------------------------------------- #
+executors:
+  default: &default
+    docker:
+      - image: circleci/node:<< pipeline.parameters.version >>
+
+# --- Command definitions --------------------------------------------------- #
+
+commands:
+  cmd_lerna:
+    parameters:
+      cmd:
+        default: bootstrap
+        type: string
+    steps:
+      - checkout
+      - run: 
+          name: << parameters.cmd >> packages
+          command: npx lerna << parameters.cmd >>
+  yarn_script:
+    parameters:
+      run:
+        description: >-
+          Running script yarn
+        default: lint
+        type: enum
+        enum:
+          - test
+          - lint
+          - build
+    steps:
+      - checkout
+      - *attach-workspace
+      - run: 
+          name: Trigger << parameters.run >> script
+          command: npx lerna run << parameters.run >> --stream
+
+  install-packages :
+    steps: 
+      - checkout
+      - *attach-workspace 
+      - *restore_cache
+      - run:
+          name: Install Module Dependencies
+          command: yarn install --frozen-lockfile
+      - cmd_lerna
+      - *save-cache
+      - persist_to_workspace:
+          paths: *dependency-paths
+          root: *workspace-root
+
+# --- Job definitions -------------------------------------------------------- #
+
+jobs:
+  # Installs Node dependencies via Yarn, caches them, then persists
+  # to the workspace.
+  install-dependencies:
+    <<: *default
+    steps:
+      - install-packages
+
+ # Runs the linter against relevant source files.
+  lint:
+    <<: *default
+    steps:
+      - yarn_script:
+          run: lint
+
+  # Builds modules and persists the build output to the workspace.
+  build:
+    <<: *default
+    steps:
+      - yarn_script:
+          run: build
+      - persist_to_workspace:
+          paths: *build-output-paths
+          root: *workspace-root
+
+  # Run unit/integration/e2e tests.
+  test:
+    executor: default
+    steps:
+      - yarn_script:
+          run: test
+
+  # Publish the tags to github.
+  tag-release:
+    <<: *default
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "2a:b2:8a:15:02:9e:87:2f:27:0e:89:86:55:b3:ac:43"
+      - checkout
+      - *attach-workspace
+      - run:
+          name: release tags
+          command: |
+            git config --global user.email "$GH_EMAIL"
+            git config --global user.name "$GH_USER"
+            npx lerna version --conventional-commits --create-release github --yes
+      - persist_to_workspace:
+          paths: << pipeline.parameters.pkg_dir >>
+          root: *workspace-root
+
+  # Publish the tags to github.
+  create-release:
+    <<: *default
+    steps:
+      - checkout
+      - *attach-workspace
+      - run:
+          name: set npm config
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" >> .npmrc
+      - run:
+          name: Publish packages
+          command: npx lerna publish from-package --yes
+     
+workflows:
+  # Builds modules, verifies code with the linter, and runs unit tests.
+  pull-request:
+    jobs:
+      - install-dependencies: *filter-default-branches
+
+      - lint:
+          requires:
+            - install-dependencies
+
+      - test:
+          requires:
+            - install-dependencies
+
+      - build:
+          requires:
+            - install-dependencies
+
+  # Builds modules, verifies code with the linter, runs unit tests, and
+  # publishes the built packages to NPM.
+  release-publish-packages:
+    jobs:
+      - install-dependencies: *filter-release-branches-only
+
+      - lint:
+          requires:
+            - install-dependencies
+
+      - test:
+          requires:
+            - install-dependencies
+
+      - build:
+          requires:
+            - install-dependencies
+
+        # Manual approval step as a final gatekeeper to prevent
+        # possible mistakes!
+      - confirm-release:
+          type: approval
+          requires:
+            - lint
+            - test
+            - build
+
+      
+      - tag-release:
+          requires:
+            - confirm-release
+
+      - create-release:
+          requires:
+            - tag-release

@@ -1,0 +1,19 @@
+{
+  "name": "@xdevopps/lib-react-xd-design",
+  "version": "0.0.0",
+  "description": "library components react",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "repository": "https://github.com/xdevopps/frontend-archi.git",
+  "scripts": {
+    "test": "echo 'hello'",
+    "lint": "eslint",
+    "build": "webpack"
+  },
+  "author": "Maryvon MICHEL",
+  "license": "ISC",
+  "gitHead": "34c6572990f4b1e096778efacaa640740674ce50"
+}

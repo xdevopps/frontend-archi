@@ -1,0 +1,25 @@
+{
+  "name": "@xdevopps/rdev-front",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "test": "lerna run --stream test",
+    "lint": "lerna run --stream lint",
+    "build": "lerna run --stream build",
+    "release": "lerna version --conventional-commits --yes"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.2.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lerna": "^4.0.0",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

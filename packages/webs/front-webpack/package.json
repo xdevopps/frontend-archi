@@ -1,0 +1,17 @@
+{
+  "name": "web-front-webpack",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo 'hello'",
+    "lint": "eslint",
+    "build": "webpack"
+  },
+  "author": "Maryvon MICHEL",
+  "license": "ISC",
+  "gitHead": "2cf3d3a844e701ab5c5bbfb521c82dc5ac4c7a21",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0"
+  }
+}
