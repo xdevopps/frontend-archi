@@ -1,4 +1,4 @@
-class Card extends HTMLElement{
+export default class CardComponent extends HTMLElement{
 
     constructor(){
         super();
@@ -45,4 +45,4 @@ class Card extends HTMLElement{
     }
 }
 
-customElements.define('profile-card', Card);
+customElements.define('profile-card', CardComponent);

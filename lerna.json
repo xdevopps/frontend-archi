@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "packages/libs/*",
+    "packages/webs/*"
+  ],
+  "version": "1.0.0"
+}

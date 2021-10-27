@@ -1,0 +1,11 @@
+{
+  "name": "@xdevopps/xd-design",
+  "version": "1.0.0",
+  "description": "components library",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC"
+}
