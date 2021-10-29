@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@xdevopps/xd-design": "file:../../../libs/xd-design",
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "babel-loader": "^8.2.3",
