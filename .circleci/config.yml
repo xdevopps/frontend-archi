@@ -5,7 +5,7 @@ workflows:
       - build
 jobs:
   build:
-    working_directory: ~/mern-starter
+    working_directory: ~/project
     docker:
       - image: circleci/node:latest
     steps:
@@ -13,4 +13,5 @@ jobs:
       - run:
           name: install-yarn
           command: yarn install
+          working_directory: ~/my-app
       - run: yarn build
