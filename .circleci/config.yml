@@ -12,7 +12,9 @@ jobs:
       - checkout
       - run:
           name: install-yarn          
-          working_directory: ~/my-app
           command: yarn install
 
-      - run: yarn build
+      - run: 
+          name: build_webcomponent
+          working_directory: ~/packages/libs/xd-design
+          command: yarn build
