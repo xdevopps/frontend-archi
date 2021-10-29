@@ -11,7 +11,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install-yarn
-          command: yarn install
+          name: install-yarn          
           working_directory: ~/my-app
+          command: yarn install
+
       - run: yarn build
