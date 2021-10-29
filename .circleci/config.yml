@@ -11,10 +11,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@5'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-      - run:
-          name: install-npm-wee
-          command: npm install
+          name: install-yarn
+          command: yarn install
