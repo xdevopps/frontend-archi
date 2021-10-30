@@ -17,4 +17,4 @@ jobs:
       - run: 
           name: build_webcomponent
           working_directory: ~project/packages/libs/xd-design
-          command: cd packages/libs/xd-design && yarn build
+          command: cd ~project/packages/libs/xd-design && yarn build
