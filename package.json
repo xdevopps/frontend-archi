@@ -5,6 +5,7 @@
      "build": "lerna run build --parallel"
   },
   "devDependencies": { 
+    "@xdevopps/xd-design": "file:./packages/libs/xd-design",
     "lerna": "^4.0.0",
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
