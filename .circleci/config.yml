@@ -19,7 +19,7 @@
 #           command: yarn build
 version: 2.1
 orbs:
-  node: circleci/node@4.5
+  node: circleci/node:latest
 jobs:
   release:
     executor: node/default
@@ -36,11 +36,6 @@ workflows:
     # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
       - node/test:
-          matrix:
-            parameters:
-              version:
-                - 16.1.0
-                - 14.17.0
       - release:
           requires:
             - node/test
