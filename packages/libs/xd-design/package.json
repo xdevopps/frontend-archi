@@ -4,7 +4,8 @@
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "release": "npx semantic-release"
   },
   "author": "",
   "license": "ISC"
