@@ -18,4 +18,6 @@ jobs:
           name: build_webcomponent 
           command: yarn build
 
-      - run: npx semantic-release
+      - run: 
+          name: release
+          command:  npx semantic-release
