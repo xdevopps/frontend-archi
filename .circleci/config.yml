@@ -19,5 +19,5 @@ jobs:
           command: yarn build
 
       - run: 
-          name: release
+          name: publish
           command:  yarn release

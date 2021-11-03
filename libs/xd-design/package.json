@@ -1,11 +1,10 @@
 {
-  "name": "@xdevopps/xd-design",
+  "name": "@xdevopps/lib-xd-design",
   "version": "1.0.0",
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
-    "build": "webpack",
-    "release": "npx semantic-release"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC"

@@ -1,27 +1,23 @@
 {
   "name": "root",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "lerna run build --parallel",
-    "release": "lerna run release --parallel"
+    "release": "lerna run --scope @xdevopps/lib-* build"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.1",
-    "@semantic-release/npm": "^8.0.2",
-    "@semantic-release/release-notes-generator": "^10.0.2",
     "@xdevopps/xd-design": "file:./packages/libs/xd-design",
     "babel-loader": "^8.2.3",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
+    "@lerna/filter-options": "^4.0.0",
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1"
-  }
+  },
+  "version": "0.0.2"
 }
