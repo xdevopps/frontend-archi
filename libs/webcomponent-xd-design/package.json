@@ -1,5 +1,5 @@
 {
-  "name": "@xdevopps/lib-xd-design",
+  "name": "@xdevopps/lib-webc-xd-design",
   "version": "1.0.1",
   "description": "components library",
   "main": "dist/main.js",
@@ -7,5 +7,6 @@
     "build": "webpack"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "2cf3d3a844e701ab5c5bbfb521c82dc5ac4c7a21"
 }

@@ -1,9 +1,11 @@
 {
   "name": "root",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  }, 
   "scripts": {
-    "build": "lerna run build --parallel",
-    "release": "lerna run --scope @xdevopps/lib-* build"
+    "build": "lerna run --scope @xdevopps/lib-* build"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
