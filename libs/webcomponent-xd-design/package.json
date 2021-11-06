@@ -1,6 +1,6 @@
 {
   "name": "@xdevopps/lib-webc-xd-design",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
