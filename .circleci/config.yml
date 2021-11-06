@@ -17,7 +17,3 @@ jobs:
       - run: 
           name: build_webcomponent 
           command: yarn build
-
-      - run: 
-          name: publish
-          command:  yarn release
