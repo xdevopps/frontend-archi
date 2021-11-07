@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: check_env          
-          command: echo ${NPM_TOKEN}
+          command: echo ${secrets.NPM_TOKEN}
 
 workflows:
   "build webcomponeents":
