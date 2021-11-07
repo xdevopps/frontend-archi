@@ -1,13 +1,13 @@
-workflows:
-  version: 2
-  "build webcomponeents":
-    jobs:
-      - build
+orbs:
+  node: circleci/node@4.2.1
+
+version: 2.1
+
 jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: circleci/node:latest
+      - image: docker
     steps:
       - checkout
       - run:
@@ -17,3 +17,8 @@ jobs:
       - run: 
           name: build_webcomponent 
           command: yarn build
+        
+workflows:
+  "build webcomponeents":
+    jobs:
+      - build
