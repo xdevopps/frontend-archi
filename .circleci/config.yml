@@ -7,17 +7,13 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: node
+      - image: circleci/node:10-browsers
     steps:
       - checkout
       - run:
-          name: install-yarn          
-          command: yarn install
+          name: check_env          
+          command: echo ${NPM_TOKEN}
 
-      - run: 
-          name: build_webcomponent 
-          command: yarn build
-        
 workflows:
   "build webcomponeents":
     jobs:
