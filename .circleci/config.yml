@@ -33,6 +33,15 @@ jobs:
           pkg-manager: yarn
       - run: yarn test
 
+  build:
+    <<: *default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          pkg-manager: yarn
+      - run: yarn build
+
   publish:
     executor: 
       name: node/default
@@ -50,9 +59,11 @@ workflows:
   test_my_app:
     jobs:
       - lint
-      - test:
+      - test
+      - build:
           requires:
             - lint
+            - test
       - publish:
           filters:
             branches:
