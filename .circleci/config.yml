@@ -15,5 +15,5 @@ jobs:
 workflows:
   test_node_app:
     jobs: 
-      - node/install:
-          install-yarn: true
+      - node/build:
+          npm-run: build
