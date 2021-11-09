@@ -3,8 +3,32 @@ version: '2.1'
 orbs:
   node: circleci/node@4.7.0
 
+default: &default
+  executor: 
+    name: node/default
+    tag: '16.13.0'
+
+aliases:
+  - &install-packages
+    checkout
+    node/install-packages:
+      cache-path: ~/project/node_modules
+      pkg-manager: yarn
+
+
 jobs:
   lint-test-build:
+    <<: *default
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          pkg-manager: yarn
+      - run: yarn lint
+      - run: yarn test
+      - run: yarn build
+
+  publish:
     executor: 
       name: node/default
       tag: '16.13.0'
@@ -21,3 +45,10 @@ workflows:
   test_my_app:
     jobs:
       - lint-test-build
+      - publish:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - lint-test-build
