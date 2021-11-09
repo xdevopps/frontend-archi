@@ -8,11 +8,6 @@ default: &default
     name: node/default
     tag: '16.13.0'
 
-install: &install
-  - node/install-packages:
-      cache-path: ~/project/node_modules
-      pkg-manager: yarn
-
 
 jobs:
   lint:
@@ -43,17 +38,15 @@ jobs:
       - run: yarn build
 
   publish:
-    executor: 
-      name: node/default
-      tag: '16.13.0'
+    <<: *default
     steps:
       - checkout
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn build
+      - run: 
+          name: semantic 
+          command: npx semantic-release
 
 workflows:
   test_my_app:
@@ -65,9 +58,5 @@ workflows:
             - lint
             - test
       - publish:
-          filters:
-            branches:
-              only:
-                - master
           requires:
-            - lint
+            - build
