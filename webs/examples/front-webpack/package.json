@@ -8,13 +8,5 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "babel-loader": "^8.2.3",
-    "html-webpack-plugin": "^5.5.0",
-    "webpack": "^5.60.0",
-    "webpack-cli": "^4.9.1"
-  },
   "gitHead": "2cf3d3a844e701ab5c5bbfb521c82dc5ac4c7a21"
 }

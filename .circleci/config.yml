@@ -1,20 +1,9 @@
+version: 2.1
+
 orbs:
   node: circleci/node@4.2.1
 
-version: 2.1
-
-jobs:
-  build:
-    working_directory: ~/project
-    docker:
-      - image: circleci/node:10-browsers
-    steps:
-      - checkout
-      - run:
-          name: check_env          
-          command: echo ${NPM_TOKEN}
-
 workflows:
-  "build webcomponeents":
+  "Lint Test Build":
     jobs:
-      - build
+      - node/install-packages
