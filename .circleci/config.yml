@@ -18,8 +18,8 @@ aliases: &install-packages
 jobs:
   lint:
     <<: *default
-    steps:
-      <<: *install-packages
+    steps: 
+      - *install-packages
       - run: yarn lint
 
 
