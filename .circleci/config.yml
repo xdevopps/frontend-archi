@@ -42,7 +42,7 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - lint-test-build
+      - lint
       - publish:
           filters:
             branches:
