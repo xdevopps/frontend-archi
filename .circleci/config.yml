@@ -49,4 +49,4 @@ workflows:
               only:
                 - master
           requires:
-            - lint-test-build
+            - lint
