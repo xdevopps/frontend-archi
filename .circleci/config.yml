@@ -17,8 +17,9 @@ jobs:
     executor: 
       name: node/default
       tag: '16.13.0'
-      steps:
-        - run: yarn test
+    steps:
+      - checkout
+      - run: yarn test
 
 workflows:
   test_my_app:
