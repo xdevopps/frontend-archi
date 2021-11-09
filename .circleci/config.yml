@@ -17,15 +17,22 @@ aliases:
 
 
 jobs:
-  lint-test-build:
+  lint:
     <<: *default
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+      <<: *install-packages
       - run: yarn lint
+
+  test:
+    <<: *default
+    steps:
+      <<: *install-packages
       - run: yarn test
+
+  build:
+    <<: *default
+    steps:
+      <<: *install-packages
       - run: yarn build
 
   publish:
