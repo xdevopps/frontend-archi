@@ -8,7 +8,7 @@ default: &default
     name: node/default
     tag: '16.13.0'
 
-install: &install-packages
+install: &install
   - node/install-packages:
       cache-path: ~/project/node_modules
       pkg-manager: yarn
@@ -18,7 +18,7 @@ jobs:
   lint:
     <<: *default
     steps:
-      <<: *install-packages
+      - run: *install
       - run: yarn lint
 
 
