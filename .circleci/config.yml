@@ -11,8 +11,8 @@ default: &default
 aliases:
   - &install-packages
       - node/install-packages:
-        cache-path: ~/project/node_modules
-        pkg-manager: yarn
+          cache-path: ~/project/node_modules
+          pkg-manager: yarn
 
 
 jobs:
