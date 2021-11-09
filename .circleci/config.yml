@@ -15,4 +15,5 @@ jobs:
 workflows:
   test_node_app:
     jobs: 
-      - install-node
+      - node/install:
+          install-yarn: true
