@@ -54,6 +54,7 @@ workflows:
       - lint
       - test
       - build:
+          context: token_npm_github
           requires:
             - lint
             - test
