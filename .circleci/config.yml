@@ -18,7 +18,7 @@ jobs:
   lint:
     <<: *default
     steps:
-      - run: *install
+      - *install
       - run: yarn lint
 
 
