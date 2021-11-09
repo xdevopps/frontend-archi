@@ -4,8 +4,8 @@ orbs:
 jobs:
   lint:
     executor: 
-      - node/default
-      - tag: '16.13.0'
+      name: node/default
+      tag: '16.13.0'
     steps:
       - checkout
       - node/install-packages:
