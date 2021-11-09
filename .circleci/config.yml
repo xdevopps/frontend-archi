@@ -3,8 +3,9 @@ orbs:
   node: circleci/node@4.7.0
 jobs:
   lint:
-    executor: node/default
-    tag: '16.13.0'
+    executor: 
+      - node/default
+      - tag: '16.13.0'
     steps:
       - checkout
       - node/install-packages:
