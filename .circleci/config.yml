@@ -19,7 +19,7 @@ jobs:
     <<: *default
     steps:
       - checkout
-      - *install
+      <<: *install
       - run: yarn lint
 
 
