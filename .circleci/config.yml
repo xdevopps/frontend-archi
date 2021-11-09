@@ -1,10 +1,8 @@
-version: 2.1
-
+version: '2.1'
 orbs:
-  node: circleci/node@4.2.1
-
+  node: circleci/node@4.7.0
 workflows:
-  test_node_app:
-    jobs: 
+  run-npm-command:
+    jobs:
       - node/run:
           npm-run: build
