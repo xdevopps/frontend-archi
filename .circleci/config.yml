@@ -6,5 +6,3 @@ workflows:
     jobs:
       - node/install:
           install-yarn: true
-      - node/run:
-          npm-run: build
