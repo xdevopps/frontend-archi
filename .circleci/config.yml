@@ -10,10 +10,10 @@ default: &default
 
 aliases:
   - &install-packages
-    checkout
-    node/install-packages:
-      cache-path: ~/project/node_modules
-      pkg-manager: yarn
+    - checkout
+    - node/install-packages:
+        cache-path: ~/project/node_modules
+        pkg-manager: yarn
 
 
 jobs:
