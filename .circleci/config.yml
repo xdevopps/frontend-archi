@@ -4,5 +4,6 @@ orbs:
 workflows:
   run-npm-command:
     jobs:
-      - node/install:
-          install-yarn: true
+      - node/test
+      - node/run:
+          npm-run: build
