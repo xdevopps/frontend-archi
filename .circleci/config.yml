@@ -14,8 +14,11 @@ jobs:
       - run: yarn lint
 
   test:
-    steps:
-      - run: yarn test
+    executor: 
+      name: node/default
+      tag: '16.13.0'
+      steps:
+        - run: yarn test
 
 workflows:
   test_my_app:
