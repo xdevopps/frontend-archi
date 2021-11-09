@@ -8,11 +8,10 @@ default: &default
     name: node/default
     tag: '16.13.0'
 
-aliases:
-  - &install-packages
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+install: &install-packages
+  - node/install-packages:
+      cache-path: ~/project/node_modules
+      pkg-manager: yarn
 
 
 jobs:
