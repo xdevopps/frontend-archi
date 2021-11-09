@@ -19,9 +19,7 @@ jobs:
     <<: *default
     steps:
       - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+      - *install
       - run: yarn lint
 
 
