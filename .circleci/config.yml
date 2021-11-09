@@ -9,7 +9,7 @@ default: &default
     tag: '16.13.0'
 
 install: &install
-  - node/install-packages:
+  node/install-packages:
       cache-path: ~/project/node_modules
       pkg-manager: yarn
 
