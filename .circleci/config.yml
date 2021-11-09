@@ -6,4 +6,4 @@ orbs:
 workflows:
   "Lint Test Build":
     jobs:
-      - node/install-packages
+      - node/test
