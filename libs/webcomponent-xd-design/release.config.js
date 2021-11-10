@@ -12,7 +12,7 @@ module.exports = {
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'libs/webcomponent-xd-design/dist/**'],
+        assets: ['CHANGELOG.md', 'dist/**'],
         message: 'chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
     ]
