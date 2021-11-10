@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "eslint",
     "build": "webpack",
-    "release":"npx semantic-release"
+    "deploy":"npx semantic-release"
   },
   "author": "",
   "license": "ISC",

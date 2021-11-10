@@ -5,10 +5,10 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "test": "lerna run --scope @xdevopps/lib-* test",
-    "lint": "lerna run --scope @xdevopps/lib-* lint",
-    "build": "lerna run --scope @xdevopps/lib-* build",
-    "release":"lerna run --scope @xdevopps/lib-* release"
+    "test": "lerna run --stream test",
+    "lint": "lerna run --stream lint",
+    "build": "lerna run --stream build",
+    "deploy":"lerna run --stream release"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

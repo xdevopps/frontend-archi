@@ -1,4 +1,4 @@
-version: '2.1'
+version: 2.1
 
 orbs:
   node: circleci/node@4.7.0
@@ -7,6 +7,10 @@ default: &default
   executor: 
     name: node/default
     tag: '16.13.0'
+
+aliases:
+  - &description
+    description: release the web package to github pages or static server
 
 commands:
   install-packages:
@@ -46,17 +50,19 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: yarn build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./project/libs/webcomponent-xd-design
 
-  publish:
+  deploy:
     <<: *default
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+      - attach_workspace:
+          at: ~/
       - run: 
-          name: release-package 
-          command: yarn release
+          name: release-package-libs
+          command: yarn deploy
 
 workflows:
   test_my_app:
@@ -71,7 +77,7 @@ workflows:
       - build:
           requires:
             - install
-      - publish:
+      - deploy:
           context: token_npm_github
           requires:
             - lint
