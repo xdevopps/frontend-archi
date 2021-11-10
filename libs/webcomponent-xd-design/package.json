@@ -4,7 +4,9 @@
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
-  "repository": "https://github.com/xdevopps/frontend-archi.git",
+  "repository": {
+    "url" : "git://github.com/xdevopps/frontend-archi.git"
+  },
   "version": "2.0.0",
   "description": "components library",
   "main": "dist/main.js",
