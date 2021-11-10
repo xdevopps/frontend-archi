@@ -5,7 +5,7 @@ module.exports = {
     '@semantic-release/npm',
     ["@semantic-release/github", {
       "assets": [
-        {"path": ".", "label": "Package module"}
+        {"path": "dist/*.js", "label": "Package module"}
       ]
     }],
   ]
