@@ -60,6 +60,7 @@ jobs:
           root: ~/
           paths:
             - ./project/libs/webcomponent-xd-design
+      - run: echo "ls -al"
       - run: 
           name: release-package-libs
           command: yarn deploy
