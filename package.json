@@ -2,8 +2,7 @@
   "name": "root",
   "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "pkgRoot": "libs/webcomponent-xd-design/dist"
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "test": "lerna run --scope @xdevopps/lib-* test",
