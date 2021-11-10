@@ -50,12 +50,16 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: yarn build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./project/libs/webcomponent-xd-design
 
   deploy:
     <<: *default
     steps:
       - attach_workspace:
-          at: ~/project/libs/webcomponent-xd-design
+          at: ~/
       - run: ls -al
       - run: 
           name: release-package-libs
