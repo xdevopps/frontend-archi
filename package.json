@@ -8,7 +8,7 @@
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
     "build": "lerna run --stream build",
-    "deploy":"lerna run --stream release"
+    "deploy":"lerna run --stream deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
