@@ -8,7 +8,8 @@
   "scripts": {
     "test": "lerna run --scope @xdevopps/lib-* test",
     "lint": "lerna run --scope @xdevopps/lib-* lint",
-    "build": "lerna run --scope @xdevopps/lib-* build"
+    "build": "lerna run --scope @xdevopps/lib-* build",
+    "release":"lerna run --scope @xdevopps/lib-* release"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

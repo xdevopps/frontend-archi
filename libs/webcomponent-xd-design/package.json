@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint",
-    "build": "webpack"
+    "build": "webpack",
+    "release":"npx semantic-release"
   },
   "author": "",
   "license": "ISC",
