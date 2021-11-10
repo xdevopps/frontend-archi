@@ -8,11 +8,9 @@ default: &default
     name: node/default
     tag: '16.13.0'
 
-
-jobs:
-  install:
-    <<: *default
-    steps:
+commands:
+  install-packages:
+    steps: 
       - checkout
       - node/install-packages:
           cache-path: ~/project/node_modules
@@ -21,6 +19,12 @@ jobs:
           root: ~/
           paths:
             - ./project
+
+jobs:
+  install:
+    <<: *default
+    steps:
+      - install-packages
 
   lint:
     <<: *default
