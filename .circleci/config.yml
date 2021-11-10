@@ -1,5 +1,10 @@
 version: 2.1
 
+parameters:
+  pkg_dir:
+    type: string
+    default: "./project/libs/webcomponent-xd-design"
+
 orbs:
   node: circleci/node@4.7.0
 
@@ -53,7 +58,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./project/libs/webcomponent-xd-design
+            - << pipeline.parameters.pkg_dir >>
 
   deploy:
     <<: *default
