@@ -4,11 +4,8 @@
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/xdevopps/frontend-archi.git"
-  },
-  "version": "0.0.0",
+  "repository": "https://github.com/xdevopps/frontend-archi/tree/master/libs/webcomponent-xd-design",
+  "version": "1.0.0",
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
