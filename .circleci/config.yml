@@ -10,31 +10,37 @@ default: &default
 
 
 jobs:
-  lint:
+  install:
     <<: *default
     steps:
       - checkout
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./project
+
+  lint:
+    <<: *default
+    steps:
+      - attach_workspace:
+          at: ~/
       - run: yarn lint
 
   test:
     <<: *default
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+      - attach_workspace:
+          at: ~/
       - run: yarn test
 
   build:
     <<: *default
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
+      - attach_workspace:
+          at: ~/
       - run: yarn build
 
   publish:
@@ -51,13 +57,19 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - lint
-      - test
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
       - build:
           requires:
-            - lint
-            - test
+            - install
       - publish:
           context: token_npm_github
           requires:
+            - lint
+            - test
             - build
