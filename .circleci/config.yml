@@ -55,7 +55,7 @@ jobs:
     <<: *default
     steps:
       - attach_workspace:
-          at: ~/
+          at: ~/project/libs/webcomponent-xd-design
       - run: ls -al
       - run: 
           name: release-package-libs
