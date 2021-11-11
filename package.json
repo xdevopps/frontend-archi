@@ -1,5 +1,6 @@
 {
   "name": "@xdevopps/ui-project",
+  "repository": "https://github.com/xdevopps/frontend-archi.git",
   "private": false,
   "scripts": {
     "test": "lerna run --stream test",
