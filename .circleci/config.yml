@@ -21,7 +21,7 @@ commands:
   install-packages:
     steps: 
       - checkout
-       - run:
+      - run:
           name: Set registry URL
           command: npm set registry https://npm.pkg.github.com
       - node/install-packages:
