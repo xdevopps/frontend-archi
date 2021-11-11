@@ -24,8 +24,9 @@ commands:
       - run:
         name: set repo privte
         command: 
-          - npm config set registry https://npm.pkg.github.com/@xdevopps
-          - echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          steps:
+            - run: npm config set registry https://npm.pkg.github.com/@xdevopps
+            - run: echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
