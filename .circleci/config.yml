@@ -21,16 +21,22 @@ commands:
   install-packages:
     steps: 
       - checkout
+      - run: node --version
+      - run:
+          name: Set NPM registry
+          command: |
+            echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" > .npmrc
+            echo "@xdevopps:registry=https://npm.pkg.github.com" >> .npmrc
       - restore_cache:
+          name: Restore Yarn package cache
           keys:
-          - v1-dependencies-.
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-      - run: npm install
+          - yarn-packages-{{ checksum "yarn.lock"}}
+      - run: yarn install --immutable
       - save_cache:
+          name: Save Yarn package cache
           paths:
-            - node_modules
-          key: v1-dependencies-
+            - ./project/node_modules
+          key: yarn-packages-{{ checksum "yarn.lock"}}
       - persist_to_workspace:
           root: ~/
           paths:
