@@ -96,7 +96,7 @@ jobs:
           at: ~/
       - run: 
           name: release-package-libs
-          command: yarn publish
+          command: yarn publish:libs
 
 workflows:
   test_my_app:

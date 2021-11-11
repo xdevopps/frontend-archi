@@ -12,7 +12,7 @@
     "test": "jest",
     "lint": "eslint",
     "build": "webpack",
-    "publish":"npx semantic-release"
+    "publish:libs":"npx semantic-release"
   },
   "author": "",
   "license": "ISC",
