@@ -93,7 +93,7 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - install
+      - install:
           context: token_npm_github
       - lint:
           requires:
