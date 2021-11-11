@@ -30,16 +30,13 @@ commands:
       - restore_cache:
           name: Restore Yarn package cache
           keys:
-          - yarn-packages-{{ checksum "yarn.lock"}}
+          - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --immutable
       - save_cache:
           name: Save Yarn package cache
           paths:
             - ~/project/node_modules
-          key: yarn-packages-{{ checksum "yarn.lock"}}
-      - run:
-          name: content of npm repo
-          command: cat .npmrc
+          key: yarn-packages-{{ checksum "yarn.lock" }}
       - persist_to_workspace:
           root: ~/
           paths:
