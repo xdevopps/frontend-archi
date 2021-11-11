@@ -32,8 +32,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/xdevopps/frontend-archi.git"
-  },
-  "dependencies": {
-    "@xdevopps/lib-webc-xd-design": "1.8.3"
   }
 }
