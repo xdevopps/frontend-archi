@@ -39,9 +39,7 @@ commands:
           key: yarn-packages-{{ checksum "yarn.lock"}}
       - run:
           name: content of npm repo
-          command: |
-            echo cat .npmrc
-
+          command: cat .npmrc
       - persist_to_workspace:
           root: ~/
           paths:
