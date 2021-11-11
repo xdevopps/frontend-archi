@@ -21,21 +21,26 @@ commands:
   install-packages:
     steps: 
       - checkout
+
       - run: node --version
+
       - run:
           name: Set NPM registry
           command: |
-            echo ""
+            echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" > .npmrc
+            echo "@xdevopps:registry=https://npm.pkg.github.com" >> .npmrc
       - restore_cache:
           name: Restore Yarn package cache
           keys:
           - yarn-packages-{{ checksum "yarn.lock" }}
       - run: yarn install --immutable
+
       - save_cache:
           name: Save Yarn package cache
           paths:
             - ~/project/node_modules
           key: yarn-packages-{{ checksum "yarn.lock" }}
+      
       - persist_to_workspace:
           root: ~/
           paths:
@@ -52,6 +57,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+          
       - run: yarn lint
 
   test:
@@ -59,6 +65,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+
       - run: yarn test
 
   build:
@@ -66,7 +73,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+
       - run: yarn build
+
       - persist_to_workspace:
           root: ~/
           paths:
@@ -84,8 +93,7 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - install:
-          context: token_npm_github
+      - install
       - lint:
           requires:
             - install
