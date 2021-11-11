@@ -35,7 +35,7 @@ commands:
       - save_cache:
           name: Save Yarn package cache
           paths:
-            - ./project/node_modules
+            - ~/project/node_modules
           key: yarn-packages-{{ checksum "yarn.lock"}}
       - persist_to_workspace:
           root: ~/
