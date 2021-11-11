@@ -21,7 +21,7 @@ commands:
   install-packages:
     steps: 
       - checkout
-      - run: ls -al
+      - run: cat ~/.npm
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
