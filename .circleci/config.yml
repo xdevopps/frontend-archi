@@ -23,7 +23,7 @@ commands:
       - checkout
       - run:
         name: set repo privte
-        command: 
+        commands: 
           steps:
             - run: npm config set registry https://npm.pkg.github.com/@xdevopps
             - run: echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
