@@ -2825,10 +2825,10 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.6.0.tgz#2c275aa05c895eccebbfc34cfb223c6e8bd591a2"
   integrity sha512-ZkVeqEmRpBV2GHvjjUZqEai2PpUbuq8Bqd//vEYsp63J8WyexI8ppCqVS3Zs0QADf6aWuPdU+0XsPI647PVlQA==
 
-"@xdevopps/lib-webc-xd-design@1.8.3":
-  version "1.8.3"
-  resolved "https://npm.pkg.github.com/download/@xdevopps/lib-webc-xd-design/1.8.3/f2aecf9697521cd94bb7fa6d3e039e903c8b60f546b24456b3b56fa07ff0f951#a2139fc0507cb8f11d057c5e9c435f125d0aaa85"
-  integrity sha512-bvU3X1yl1ltNQOsN9t0ZS2UNOuBF5D9XXPjwDu/a7wIl7i4EUq7bMfavJt5a+tXphEBz8EgrFbEYm/sH2M7FNg==
+"@xdevopps/lib-webc-xd-design@1.10.0":
+  version "1.10.0"
+  resolved "https://npm.pkg.github.com/download/@xdevopps/lib-webc-xd-design/1.10.0/1e7de358ffe3e5d76637c6cd98e440927267089a61d94ee5770c45cc535c8c7a#e270c6c940faec06d3f6dbd8c47dc7ef47781a12"
+  integrity sha512-/X66u/NeL/xGn12cXbfBTbj699cWVBHl/JcMnNB8LzERSZobYvan8EIxmjACqrZ9rTrC4+r6ZbGByczdYkTNCQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
