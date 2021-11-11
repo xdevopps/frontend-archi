@@ -87,7 +87,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: 
-          name: release-package-libs
+          name: deploy-app-web
           command: yarn deploy
   publish:
     <<: *default
