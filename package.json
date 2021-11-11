@@ -1,13 +1,12 @@
 {
   "name": "@xdevopps/ui-project",
-  "repository": "https://github.com/xdevopps/frontend-archi.git",
   "private": false,
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
     "build": "lerna run --stream build",
     "publish:libs": "lerna run --scope @xdevopps/lib-* publish:libs",
-    "deploy:webs": "lerna run --stream deploy"
+    "deploy:webs": "lerna run --stream deploy:webs"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
