@@ -21,15 +21,11 @@ commands:
   install-packages:
     steps: 
       - checkout
-      - run:
-          name: set repo privte
-          command: | 
-              echo "@xdevopps:registry=https://npm.pkg.github.com" > ~/.npmrc
-              echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
-              echo "${NPM_TOKEN}"
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
+          environment:
+            NPM_TOKEN: ${NPM_TOKEN}
       - persist_to_workspace:
           root: ~/
           paths:
