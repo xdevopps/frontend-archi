@@ -1,9 +1,6 @@
 {
   "name": "@xdevopps/ui-project",
   "private": false,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
@@ -29,9 +26,5 @@
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1"
   },
-  "version": "0.0.0-development",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xdevopps/frontend-archi.git"
-  }
+  "version": "0.0.0-development"
 }
