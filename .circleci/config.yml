@@ -21,7 +21,9 @@ commands:
   install-packages:
     steps: 
       - checkout
-      - run: npm config ls -l
+       - run:
+          name: Set registry URL
+          command: npm set registry https://npm.pkg.github.com
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
