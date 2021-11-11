@@ -89,6 +89,14 @@ jobs:
       - run: 
           name: release-package-libs
           command: yarn deploy
+  publish:
+    <<: *default
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: 
+          name: release-package-libs
+          command: yarn publish
 
 workflows:
   test_my_app:
@@ -105,6 +113,11 @@ workflows:
           requires:
             - install
       - deploy:
+          requires:
+            - lint
+            - test
+            - build
+      - publish:
           context: token_npm_github
           requires:
             - lint
