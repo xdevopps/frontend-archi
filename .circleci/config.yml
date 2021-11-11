@@ -22,6 +22,7 @@ commands:
     steps: 
       - checkout
       - node/install-packages:
+          cache-path: ~/project/node_modules
           pkg-manager: yarn
       - persist_to_workspace:
           root: ~/
