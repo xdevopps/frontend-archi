@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   pkg_dir:
     type: string
-    default: "./project/libs/webcomponent-xd-design"
+    default: "./project"
 
 orbs:
   node: circleci/node@4.7.0
