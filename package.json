@@ -5,8 +5,8 @@
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
     "build": "lerna run --stream build",
-    "deploy": "lerna run --stream deploy",
-    "semantic-release": "semantic-release"
+    "publish": "lerna run --stream publish",
+    "deploy": "lerna run --stream deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -25,6 +25,5 @@
     "semantic-release": "^18.0.0",
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1"
-  },
-  "version": "0.0.0-development"
+  }
 }
