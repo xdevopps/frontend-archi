@@ -37,6 +37,7 @@ commands:
           paths:
             - ~/project/node_modules
           key: yarn-packages-{{ checksum "yarn.lock"}}
+      - run: ls -al
       - persist_to_workspace:
           root: ~/
           paths:
