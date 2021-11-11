@@ -22,6 +22,10 @@ commands:
     steps: 
       - checkout
       - run: node --version
+      - run:
+          name: Set NPM registry
+          command: |
+            echo ""
       - restore_cache:
           name: Restore Yarn package cache
           keys:
