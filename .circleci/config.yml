@@ -22,7 +22,6 @@ commands:
     steps: 
       - checkout
       - node/install-packages:
-          cache-path: ~/project/node_modules
           pkg-manager: yarn
       - persist_to_workspace:
           root: ~/
@@ -72,8 +71,7 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - install:
-          context: token_npm_github
+      - install
       - lint:
           requires:
             - install
