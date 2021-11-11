@@ -22,11 +22,6 @@ commands:
     steps: 
       - checkout
       - run: node --version
-      - run:
-          name: Set NPM registry
-          command: |
-            echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" > .npmrc
-            echo "@xdevopps:registry=https://npm.pkg.github.com" >> .npmrc
       - restore_cache:
           name: Restore Yarn package cache
           keys:
