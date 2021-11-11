@@ -21,11 +21,12 @@ commands:
   install-packages:
     steps: 
       - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          pkg-manager: yarn
-          environment:
-            NPM_TOKEN: ${NPM_TOKEN}
+      - restore_cache:
+          keys:
+          - v1-dependencies-.
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: npm install
       - persist_to_workspace:
           root: ~/
           paths:
