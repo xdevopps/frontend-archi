@@ -33,7 +33,7 @@ commands:
           name: Restore Yarn package cache
           keys:
           - yarn-packages-{{ checksum "yarn.lock" }}
-      - run: yarn install --immutable
+      - run: yarn install --immutable --check-cache
 
       - save_cache:
           name: Save Yarn package cache
