@@ -9,8 +9,8 @@
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
     "build": "lerna run --stream  build",
-    "publish:libs": "lerna run publish:libs",
-    "deploy:webs": "lerna run --stream deploy:webs"
+    "publish:libs": "lerna run --stream --scope @xdevopps/lib-* publish:libs",
+    "deploy:webs": "lerna run --stream @xdevopps/webs-* deploy:webs"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

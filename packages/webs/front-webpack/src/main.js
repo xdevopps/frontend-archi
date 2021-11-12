@@ -1,1 +1,0 @@
-import '@xdevopps/xd-design';
