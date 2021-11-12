@@ -99,7 +99,7 @@ jobs:
           command: yarn publish:libs
 
 workflows:
-  test_my_app:
+  deploy-and-publish:
     jobs:
       - install:
           context: token_npm_github
