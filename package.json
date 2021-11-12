@@ -8,7 +8,7 @@
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
-    "build": "lerna run --stream --scope @xdevopps/lib-* build",
+    "build": "lerna run --stream build",
     "publish:libs": "lerna run --scope @xdevopps/lib-* publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
