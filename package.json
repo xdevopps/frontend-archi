@@ -9,7 +9,7 @@
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
-    "build": "lerna run --scope @xdevopps/lib-react-xd-design build",
+    "build": "lerna run --stream --scope=@xdevopps/lib-react-xd-design build",
     "publish:libs": "lerna run --scope @xdevopps/lib-react-xd-design publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
