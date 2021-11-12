@@ -1,0 +1,12 @@
+{
+  "name": "front-webpack",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "gitHead": "2cf3d3a844e701ab5c5bbfb521c82dc5ac4c7a21"
+}

@@ -2,7 +2,8 @@
   "name": "@xdevopps/frontend-archi",
   "private": true,
   "workspaces": [
-    "packages/**"
+    "libs/**",
+    "webs/**"
   ],
   "scripts": {
     "test": "lerna run --stream test",

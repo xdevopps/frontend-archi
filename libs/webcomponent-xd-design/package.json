@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "name": "@xdevopps/lib-webc-xd-design",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "repository": "https://github.com/xdevopps/frontend-archi.git",
+  "description": "components library",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint",
+    "build": "webpack",
+    "publish:libs":"npx semantic-release"
+  },
+  "author": "",
+  "license": "ISC",
+  "gitHead": "2cf3d3a844e701ab5c5bbfb521c82dc5ac4c7a21"
+}
