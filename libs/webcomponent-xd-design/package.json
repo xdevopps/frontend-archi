@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "@xdevopps/lib-webc-xd-design",
+  "name": "@xdevopps/webc-xd-design",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
