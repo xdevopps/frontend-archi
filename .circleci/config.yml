@@ -94,6 +94,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
+      - run: ls -al
       - run: 
           name: release-package-libs
           command: yarn publish:libs
