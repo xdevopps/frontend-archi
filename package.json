@@ -2,14 +2,14 @@
   "name": "@xdevopps/frontend-archi",
   "private": true,
   "workspaces": [
-    "webs/**/*",
+    "webs/*",
     "libs/*"
   ],
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
-    "build": "lerna run --stream build",
-    "publish:libs": "lerna run --scope @xdevopps/lib-* publish:libs",
+    "build": "lerna run --stream  build",
+    "publish:libs": "lerna run publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
   "devDependencies": {
