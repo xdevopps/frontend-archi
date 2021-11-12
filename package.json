@@ -1,15 +1,10 @@
 {
   "name": "@xdevopps/frontend-archi",
   "private": false,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "public"
-  },
-  "repository": "https://github.com/xdevopps/frontend-archi.git",
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
-    "build": "lerna run --stream --scope=@xdevopps/lib-react-xd-design build",
+    "build": "lerna run --scope @xdevopps/react-xd-design build",
     "publish:libs": "lerna run --scope @xdevopps/lib-react-xd-design publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
