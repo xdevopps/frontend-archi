@@ -5,7 +5,7 @@
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
     "build": "lerna run --stream --scope @xdevopps/lib-* build",
-    "publish:libs": "lerna run --scope @xdevopps/lib-react-xd-design publish:libs",
+    "publish:libs": "lerna run --scope @xdevopps/lib-* publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
   "devDependencies": {
