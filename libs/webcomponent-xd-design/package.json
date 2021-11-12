@@ -4,7 +4,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
-  }, 
+  },
+  "repository": "https://github.com/xdevopps/frontend-archi.git",
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
