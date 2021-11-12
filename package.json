@@ -1,6 +1,11 @@
 {
   "name": "@xdevopps/ui-project",
   "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "repository": "https://github.com/xdevopps/frontend-archi.git",
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
