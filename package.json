@@ -1,5 +1,5 @@
 {
-  "name": "@xdevopps/ui-project",
+  "name": "@xdevopps/frontend-archi",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",

@@ -1,6 +1,10 @@
 {
   "version": "1.0.0",
   "name": "@xdevopps/lib-webc-xd-design",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  }, 
   "description": "components library",
   "main": "dist/main.js",
   "scripts": {
