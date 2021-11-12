@@ -1,10 +1,6 @@
 {
   "name": "@xdevopps/frontend-archi",
   "private": false,
-  "packages": [
-    "webs/**/*",
-    "libs/*"
-  ],
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
