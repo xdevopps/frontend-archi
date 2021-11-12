@@ -9,8 +9,8 @@
   "scripts": {
     "test": "lerna run --stream test",
     "lint": "lerna run --stream lint",
-    "build": "lerna run --stream build",
-    "publish:libs": "lerna run --scope @xdevopps/lib-* publish:libs",
+    "build": "lerna run --scope @xdevopps/lib-react-xd-design build",
+    "publish:libs": "lerna run --scope @xdevopps/lib-react-xd-design publish:libs",
     "deploy:webs": "lerna run --stream deploy:webs"
   },
   "devDependencies": {
