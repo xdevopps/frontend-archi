@@ -1,6 +1,6 @@
 {
   "name": "@xdevopps/lib-react-xd-design",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "library components react",
   "main": "dist/index.js",
   "publishConfig": {
